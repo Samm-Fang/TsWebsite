@@ -1,0 +1,297 @@
+/* 全局变量 */
+:root {
+  --main-bg: #23272F;
+  --main-bg-alpha: rgba(35, 39, 47, 0.85);
+  --accent: #4F8EF7;
+  --white: #fff;
+  --card-bg: rgba(255,255,255,0.08);
+  --shadow: 0 4px 32px 0 rgba(0,0,0,0.18);
+  --border-radius: 18px;
+  --transition: 0.4s cubic-bezier(.4,0,.2,1);
+  --nav-height: 64px;
+}
+
+/* 全屏背景 */
+.background {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -2;
+  width: 100vw; height: 100vh;
+  background: url('images/6.jpg') center center/cover no-repeat;
+  opacity: 0.45;
+  filter: blur(2px) brightness(0.9);
+}
+
+/* 顶部导航栏 */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-height);
+  background: var(--main-bg);
+  color: var(--white);
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  transition: background var(--transition);
+}
+.nav-container {
+  width: 90vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.nav-list {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-item {
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 6px 18px;
+  border-radius: 8px;
+  transition: background var(--transition), color var(--transition);
+}
+.nav-item.active,
+.nav-item:hover {
+  background: var(--accent);
+  color: var(--white);
+}
+
+/* 页面主内容区 */
+.section {
+  min-height: 100vh;
+  padding-top: calc(var(--nav-height) + 32px);
+  padding-bottom: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity var(--transition);
+}
+
+/* 首页布局 */
+.home-content {
+  display: flex;
+  width: 90vw;
+  max-width: 1200px;
+  gap: 48px;
+  align-items: center;
+  justify-content: space-between;
+}
+.home-left {
+  flex: 6;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.main-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  animation: fadeInDown 1s;
+}
+.sub-title {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 18px;
+  color: #e0e6f0;
+  animation: fadeInDown 1.2s;
+}
+.about-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 24px 28px;
+  margin-top: 8px;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  animation: fadeInUp 1.2s;
+  transition: box-shadow var(--transition);
+}
+.about-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--accent);
+  font-weight: bold;
+}
+.about-detail {
+  margin-top: 12px;
+  font-size: 0.98rem;
+  color: #cfd8e3;
+}
+.home-right {
+  flex: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-image {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.18);
+  animation: fadeInRight 1.2s;
+  object-fit: cover;
+}
+
+/* 作品集轮播 */
+.portfolio-carousel {
+  position: relative;
+  width: 600px;
+  max-width: 90vw;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  background: var(--card-bg);
+  animation: fadeIn 1.2s;
+}
+.carousel-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s;
+  border-radius: var(--border-radius);
+  z-index: 1;
+}
+.carousel-img.active {
+  opacity: 1;
+  z-index: 2;
+  animation: fadeIn 1.2s;
+}
+
+/* 联系方式卡片 */
+.contact-cards {
+  display: flex;
+  gap: 48px;
+  width: 90vw;
+  max-width: 900px;
+  justify-content: center;
+  align-items: stretch;
+  animation: fadeInUp 1.2s;
+}
+.contact-card {
+  flex: 1;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 32px 24px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 260px;
+  max-width: 340px;
+  transition: box-shadow var(--transition), transform var(--transition);
+  color: var(--white);
+  position: relative;
+}
+.contact-card:hover {
+  box-shadow: 0 8px 32px 0 rgba(79,142,247,0.18);
+  transform: translateY(-6px) scale(1.03);
+}
+.contact-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.contact-info {
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.copy-btn {
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 4px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+  margin-left: 8px;
+}
+.copy-btn:hover {
+  background: #3561b7;
+}
+.contact-note {
+  font-size: 0.98rem;
+  color: #cfd8e3;
+  margin-top: 18px;
+  text-align: center;
+}
+
+/* 响应式 */
+@media (max-width: 900px) {
+  .home-content, .contact-cards {
+    flex-direction: column;
+    gap: 32px;
+    align-items: stretch;
+  }
+  .portfolio-carousel {
+    height: 220px;
+  }
+  .home-image {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+@media (max-width: 600px) {
+  .nav-container {
+    width: 98vw;
+  }
+  .section {
+    padding-top: calc(var(--nav-height) + 12px);
+    padding-bottom: 24px;
+  }
+  .about-card {
+    padding: 14px 8px;
+  }
+  .portfolio-carousel {
+    height: 120px;
+  }
+  .contact-card {
+    padding: 18px 8px 12px 8px;
+    min-width: 0;
+    max-width: 100vw;
+  }
+}
+
+/* 动画 */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-32px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(32px);}
+  to { opacity: 1; transform: translateX(0);}
+}
+@keyframes fadeIn {
+  from { opacity: 0;}
+  to { opacity: 1;}
+}

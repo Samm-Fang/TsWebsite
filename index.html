@@ -1,95 +1,167 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>个人网站</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网站</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- 全屏背景 -->
-  <div class="background"></div>
-  <!-- 顶部导航栏 -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="nav-logo">个人主页</div>
-      <ul class="nav-list">
-        <li class="nav-item active" data-target="home">首页</li>
-        <li class="nav-item" data-target="portfolio">作品集</li>
-        <li class="nav-item" data-target="contact">联系方式</li>
-      </ul>
-    </div>
-  </nav>
-  <!-- 首页模块 -->
-  <section class="section home-section" id="home">
-    <div class="home-content">
-      <div class="home-left">
-        <h1 class="main-title">欢迎！</h1>
-        <h2 class="sub-title">「且视他人之凝目如盏盏鬼火，大胆的去走你的夜路」</h2>
-        <div class="about-card">
-          <h3>关于我的一些刻板印象</h3>
-          <p>
-            苏州08女高 苦逼物化地选手<br>
-            estp／日摩日摩升鱼<br>
-            游戏／番剧／cos/oc/miku<br>
-            推理／恐怖片／草东／羽毛球🏸<br>
-            喜欢给朋友爆金币（?<br>
-            爱和钱都要流向我的手心<br>
-            请多和我交朋友<br>
-            友宝女 朋友一定是对的<br>
-            谢谢你看到这 祝你生活愉快
-          </p>
-          <div class="about-detail">
-            <p>
-              游戏：无期（nox激推）9(37我们喜欢你）舟（✞能天使重度依懒✞）王者（绝育路孤🐺）喵斯（但是手残）MC（一战老兵 挖矿ing)锈湖（劳拉意难平）主播女孩（✞升天✞）<br>
-              ☁️看gal剧情（白相很爱冬马线喜欢小三上位文学）<br>
-              番剧：东京喰种（小学入坑作）王子市场 中二病 京紫 国家队 孤独摇滚mygo来自深渊jojo赛马娘 砂糖 日在校国 金田一……（看的很杂 缓慢补番中）<br>
-              COS：修毛苦手 学化妆ing目前出过六花和山田凉 目标是出遍校国／乐队<br>
-              OC：一只修练千年的白萝卜精转世<br>
-              miku：激推大fu人家（特指有很多fufu在学校里也放了）<br>
-              推理：白井 阿婆 奎因 岛田庄司 加贺美雅之 柯南道尔（总之古典本格究极爱好者）<br>
-              恐怖片：死寂 安娜贝尔 招魂 电锯惊魂 汉尼拔 寂静岭 山村老尸……（又菜又爱看请大家温子仁）<br>
-              草东：本来听草东就自卑 可是我的自卑胜过了一切爱我的（烂泥永远top1)<br>
-              羽毛球🏸：菜但爱打（老年人打法 和朋友双打默契为负 不过居然真的会运动）
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="home-right">
-        <img src="images/5.jpg" alt="个人形象" class="home-image">
-      </div>
-    </div>
-  </section>
-  <!-- 作品集模块 -->
-  <section class="section portfolio-section" id="portfolio">
-    <div class="portfolio-carousel">
-      <img src="images/1.jpg" class="carousel-img active" alt="作品1">
-      <img src="images/2.jpg" class="carousel-img" alt="作品2">
-      <img src="images/3.jpg" class="carousel-img" alt="作品3">
-      <img src="images/4.jpg" class="carousel-img" alt="作品4">
-    </div>
-  </section>
-  <!-- 联系方式模块 -->
-  <section class="section contact-section" id="contact">
-    <div class="contact-cards">
-      <div class="contact-card">
-        <div class="contact-title">QQ</div>
-        <div class="contact-info">
-          <span id="qq-number">3603230494</span>
-          <button class="copy-btn" data-copy="qq-number">复制</button>
-        </div>
-        <div class="contact-note">每一封未读邮件 都是穿越星云的薛定谔猫</div>
-      </div>
-      <div class="contact-card">
-        <div class="contact-title">微信</div>
-        <div class="contact-info">
-          <span id="wechat-number">QAQ081227</span>
-          <button class="copy-btn" data-copy="wechat-number">复制</button>
-        </div>
-        <div class="contact-note">每一封未读邮件 都是穿越星云的薛定谔猫</div>
-      </div>
-    </div>
-  </section>
-  <script src="script.js"></script>
+    <header>
+        <nav class="top-nav">
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#portfolio">作品集</a></li>
+                <li><a href="#stereotype">刻板印象</a></li>
+                <li><a href="#contact">联系方式</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="home-section">
+            <div class="home-left">
+                <h1>欢迎！</h1>
+                <p>「且视他人之凝目如盏盏鬼火，大胆的去走你的夜路」</p>
+                <div class="intro-text">
+                    <p>关于我的一些刻版印象（?</p>
+                    <p>苏州08女高 苦逼物化地选手</p>
+                    <p>estp／日摩日摩升鱼</p>
+                </div>
+            </div>
+            <div class="home-right">
+                <img src="images/5.jpg" alt="首页图片">
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio-section">
+            <h2>作品集</h2>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="images/1.jpg" style="width:100%" alt="作品集图片1">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/2.jpg" style="width:100%" alt="作品集图片2">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/3.jpg" style="width:100%" alt="作品集图片3">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/4.jpg" style="width:100%" alt="作品集图片4">
+                </div>
+            </div>
+            <div class="portfolio-text">
+                <p>游戏／番剧／cos/oc/miku</p>
+                <p>推理／恐怖片／草东／羽毛球🏸</p>
+                <p>喜欢给朋友爆金币（?</p>
+                <p>爱和钱都要流向我的手心</p>
+                <p>请多和我交朋友</p>
+                <p>友宝女 朋友一定是对的</p>
+            </div>
+        </section>
+
+        <section id="stereotype" class="stereotype-section">
+            <h2>我的刻板印象</h2>
+            
+            <div class="stereotype-details">
+                <div class="stereotype-card">
+                    <h3>游戏</h3>
+                    <ul>
+                        <li>无期（nox激推）</li>
+                        <li>9(37我们喜欢你）</li>
+                        <li>舟（✞能天使重度依懒✞）</li>
+                        <li>王者（绝育路孤🐺）</li>
+                        <li>喵斯（但是手残）</li>
+                        <li>MC（一战老兵 挖矿ing)</li>
+                        <li>锈湖（劳拉意难平）</li>
+                        <li>主播女孩（✞升天✞）</li>
+                        <li>☁️看gal剧情（白相很爱冬马线喜欢小三上位文学）</li>
+                    </ul>
+                </div>
+                
+                <div class="stereotype-card">
+                    <h3>番剧</h3>
+                    <ul>
+                        <li>东京喰种（小学入坑作）</li>
+                        <li>王子市场</li>
+                        <li>中二病</li>
+                        <li>京紫</li>
+                        <li>国家队</li>
+                        <li>孤独摇滚</li>
+                        <li>mygo</li>
+                        <li>来自深渊</li>
+                        <li>jojo</li>
+                        <li>赛马娘</li>
+                        <li>砂糖</li>
+                        <li>日在校国</li>
+                        <li>金田一……（看的很杂 缓慢补番中）</li>
+                    </ul>
+                </div>
+                
+                <div class="stereotype-card">
+                    <h3>COS & OC</h3>
+                    <ul>
+                        <li>修毛苦手 学化妆ing</li>
+                        <li>目前出过六花和山田凉</li>
+                        <li>目标是出遍校国／乐队</li>
+                        <li>OC：一只修练千年的白萝卜精转世</li>
+                        <li>miku：激推大fu人家（特指有很多fufu在学校里也放了）</li>
+                    </ul>
+                </div>
+                
+                <div class="stereotype-card">
+                    <h3>推理 & 恐怖片</h3>
+                    <ul>
+                        <li>白井</li>
+                        <li>阿婆</li>
+                        <li>奎因</li>
+                        <li>岛田庄司</li>
+                        <li>加贺美雅之</li>
+                        <li>柯南道尔（总之古典本格究极爱好者）</li>
+                        <li>死寂</li>
+                        <li>安娜贝尔</li>
+                        <li>招魂</li>
+                        <li>电锯惊魂</li>
+                        <li>汉尼拔</li>
+                        <li>寂静岭</li>
+                        <li>山村老尸……（又菜又爱看请大家温子仁）</li>
+                    </ul>
+                </div>
+                
+                <div class="stereotype-card">
+                    <h3>其他爱好</h3>
+                    <ul>
+                        <li>草东：本来听草东就自卑 可是我的自卑胜过了一切爱我的（烂泥永远top1)</li>
+                        <li>羽毛球🏸：菜但爱打（老年人打法 和朋友双打默契为负 不过居然真的会运动）</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>联系方式</h2>
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <h3>QQ</h3>
+                    <p class="contact-info" id="qq-info">3603230494 <button onclick="copyToClipboard('qq-info')">复制</button></p>
+                    <p class="contact-note">「每一封未读邮件 都是穿越星云的薛定谔猫」</p>
+                </div>
+                <div class="contact-card">
+                    <h3>微信</h3>
+                    <p class="contact-info" id="wechat-info">QAQ081227 <button onclick="copyToClipboard('wechat-info')">复制</button></p>
+                    <p class="contact-note">「每一封未读邮件 都是穿越星云的薛定谔猫」</p>
+                </div>
+            </div>
+            <div class="contact-text">
+                 <p>谢谢你看到这 祝你生活愉快</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 个人网站</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
